@@ -1,4 +1,4 @@
-'use strict'; //Writing this statement in the very begining let the entire code in a strict mode
+"use strict"; //Writing this statement in the very begining let the entire code in a strict mode
 // i.e. now the JS will strict us from doing certain things and also make the bugs visible which otherwise would have led the JS fail silenetly
 /*
 //FUNCTIONS
@@ -17,7 +17,9 @@ const newJuice = fruitprocessor(5,0); //5,0 are arguments
 console.log(newJuice);
 
 //NOTE: Functions help us to keep the code DRY(Dont Repeat Yourself)
-//Functions help us to return the entire code without writing the same code again n again by only mentioning the function name
+//Functions help us to return the entire code without writing the same code again n again by only mentioning the function name.
+
+NOTE: Function which doesn'y 'return' anything when console logged returns 'undefined'. E.g: console.log(logger()); //undefined (Although function's console log will be printed)
 */
 /*
 //FUNCTION DECLARATION VS EXPRESSIONS
@@ -359,4 +361,3 @@ console.log(`Great`);
 }
 }
 */
-
