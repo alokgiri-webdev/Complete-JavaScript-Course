@@ -94,17 +94,17 @@ console.log(z === window.z);
 
 ///////////////////////////////////////
 // The this Keyword in Practice
-console.log(this);
+console.log(this); // This will result in pointing to window object.
 
 const calcAge = function (birthYear) {
   console.log(2037 - birthYear);
-  console.log(this);
+  console.log(this); // Since, this is simple function expression, here 'this' will point to 'undefined' in strict mode & to window object in non-strict mode.
 };
 calcAge(1991);
 
 const calcAgeArrow = birthYear => {
   console.log(2037 - birthYear);
-  console.log(this);
+  console.log(this); // Since, 'this' of arrow function points to its parent's object and not of its own, therefore, here, 'this' will point to window object
 };
 calcAgeArrow(1980);
 
@@ -112,7 +112,7 @@ const jonas = {
   year: 1991,
   calcAge: function () {
     console.log(this);
-    console.log(2037 - this.year);
+    console.log(2037 - this.year); //Since, when function will be called it will be attached with jonas object, therefore, 'this' will point to jonas.
   },
 };
 jonas.calcAge();
@@ -121,11 +121,11 @@ const matilda = {
   year: 2017,
 };
 
-matilda.calcAge = jonas.calcAge;
-matilda.calcAge();
+matilda.calcAge = jonas.calcAge; // Here, matilda is borrowing, jonas's calcAge method.
+matilda.calcAge(); // Here, within calcAge method, 'this' will point to matilda as we know 'this' points to the object calling the function.
 
-const f = jonas.calcAge;
-f();
+const f = jonas.calcAge; // This is same as creating simple function 
+f(); // Since, no object is attached to it, 'this' will point to 'undefined' in strict mode and to the window object in non-strict mode.
 
 
 ///////////////////////////////////////
@@ -225,7 +225,7 @@ const jessica2 = {
 };
 
 const jessicaCopy = Object.assign({}, jessica2); // In future you can use spread operator for copying an object
-// const jessicaCopy = {...jessica2}; 
+// const jessicaCopy = {...jessica2};
 jessicaCopy.lastName = 'Davis';
 
 jessicaCopy.family.push('Mary');
@@ -233,5 +233,3 @@ jessicaCopy.family.push('John');
 
 console.log('Before marriage:', jessica2);
 console.log('After marriage: ', jessicaCopy);
-
-
