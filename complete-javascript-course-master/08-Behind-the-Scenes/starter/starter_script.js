@@ -1,4 +1,4 @@
-'use strict';
+//'use strict';
 /*
 const firstName = 'Alok';
 
@@ -40,4 +40,16 @@ const jonas = {
 };
 jonas.calcAge();
 jonas.greet();
+*/
+
+/*
+console.log(add(1,2)); // In strict mode, add not defined. In non-strict mode, add is not a function. Why is it?
+{
+  //console.log(add(1, 2));
+  function add(a, b) {
+    return a + b;
+  }
+  //console.log(add(1, 2));
+}
+console.log(add(1, 2)); // In strict-mode is throws error of 'add not defined'. Which proves function declarations are 'Block scoped' in strict mode. Where as in non-strict mode it returns the value.
 */
